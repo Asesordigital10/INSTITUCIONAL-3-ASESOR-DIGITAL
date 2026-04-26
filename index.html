@@ -18,6 +18,7 @@
             --wsap-green: #25d366;
             --text-main: #ffffff;
             --text-dim: #94a3b8;
+            --price-color: #00e676;
         }
 
         * {
@@ -30,8 +31,7 @@
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
-            padding-bottom: 100px;
-            /* Degradado sutil en el fondo simulando luz tecnológica */
+            padding-bottom: 120px; /* Espacio extra para el botón flotante */
             background-image: radial-gradient(circle at 50% 0%, #15233e 0%, var(--bg-dark) 50%);
             min-height: 100vh;
         }
@@ -52,7 +52,6 @@
             padding: 50px 0 30px;
         }
 
-        /* AJUSTE TAMAÑO DEL LOGO AUMENTADO A 180px */
         header img {
             width: 180px; 
             max-width: 100%;
@@ -102,7 +101,6 @@
             overflow: hidden;
         }
 
-        /* Animación estilo escáner arriba de la tarjeta hero */
         .hero::before {
             content: '';
             position: absolute;
@@ -123,6 +121,7 @@
             color: var(--accent);
             font-size: 1.4rem;
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .hero p {
@@ -165,23 +164,47 @@
             background: rgba(255, 255, 255, 0.03);
             padding: 15px;
             border-radius: 18px;
+            min-width: 70px;
+            text-align: center;
         }
 
         .card-content h3 {
-            margin-bottom: 6px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+            line-height: 1.3;
         }
 
         .card-content p {
             font-size: 0.95rem;
             color: var(--text-dim);
+            line-height: 1.5;
         }
 
-        /* --- Sección FAQ / Features --- */
+        .card-small-text {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.8rem !important;
+            color: var(--tech-blue) !important;
+            font-weight: 700;
+            background: rgba(0, 168, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .price-text {
+            font-size: 1.8rem;
+            color: var(--price-color);
+            font-weight: 800;
+            margin: 10px 0;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+        }
+
+        /* --- Sección FAQ --- */
         .section-title {
             text-align: center;
-            margin: 20px 0 25px;
-            font-size: 1.1rem;
+            margin: 30px 0 25px;
+            font-size: 1.2rem;
             color: var(--tech-blue);
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -199,7 +222,7 @@
 
         .faq-item h4 {
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -217,7 +240,45 @@
             line-height: 1.5;
         }
 
-        /* --- Footer y Botón Flotante de WhatsApp --- */
+        /* --- Demos Section --- */
+        .demos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .demo-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(145deg, var(--card-bg), #1a2235);
+            border: 1px solid var(--tech-blue);
+            padding: 18px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .demo-btn:hover {
+            background: var(--tech-blue);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 168, 255, 0.4);
+        }
+
+        .demo-emoji {
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        /* --- Footer y Botón Flotante --- */
         .fixed-bottom {
             position: fixed;
             bottom: 20px;
@@ -247,7 +308,6 @@
             filter: brightness(1.1);
         }
 
-        /* Efecto latido para el botón */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -271,7 +331,6 @@
     <div class="container">
         
         <header>
-            <!-- Archivo de logo actualizado a logoad.png y con un mayor tamaño configurado arriba en el CSS -->
             <img src="logoad.png" alt="Logo AD" onerror="this.style.display='none'">
             <br>
             <div class="title-badge">Asesor Digital UY</div>
@@ -279,43 +338,88 @@
         </header>
 
         <section class="hero">
-            <h2>Multiplica tus Ventas en Automático</h2>
+            <h2>TU NEGOCIO EN INTERNET HOY</h2>
             <p>Páginas webs interactivas de <span class="highlight">Pago Único</span>. Recibe pedidos las 24 horas en tu WhatsApp, sin aplicaciones de terceros ni suscripciones abusivas.</p>
         </section>
 
         <div class="cards-grid">
+            <!-- Ventana 1 -->
+            <div class="card">
+                <div class="card-emoji">🔍</div>
+                <div class="card-content">
+                    <h3>Servicios Digitales en Google Maps - Redes sociales - Whatsapp Business</h3>
+                    <p>Te configuramos para aparecer en búsquedas locales y conectar fácil a WhatsApp.</p>
+                    <span class="card-small-text">Todo tipo de negocios</span>
+                </div>
+            </div>
+
+            <!-- Ventana 2 -->
             <div class="card">
                 <div class="card-emoji">🍕</div>
                 <div class="card-content">
                     <h3>Gastronomía Ágil</h3>
-                    <p>Carta interactiva que te permite tomar cientos de pedidos rápidos mediante un sistema limpio y moderno que le encantará a tus clientes.</p>
+                    <p>Menú interactivo directo a tu Whatsapp que te permite tomar cientos de pedidos rápidos mediante un sistema limpio y moderno que le encantará a tus clientes.</p>
+                    <span class="card-small-text">Bares, Pizzerías, Tiendas</span>
                 </div>
             </div>
             
+            <!-- Ventana 3 -->
             <div class="card">
-                <div class="card-emoji">🛠️</div>
+                <div class="card-emoji">📅</div>
                 <div class="card-content">
-                    <h3>Servicios Digitales</h3>
-                    <p>Eleva tu presencia exhibiendo tu talento, catálogo de herramientas y oficios como nunca antes de manera extremadamente profesional.</p>
+                    <h3>Agendas Inteligentes 24/7</h3>
+                    <p>Olvídate de responder mensajes para dar hora. Tus clientes reservan turno solos.</p>
+                    <span class="card-small-text">Dentistas, Fisioterapeutas, Salones de belleza</span>
+                </div>
+            </div>
+
+            <!-- Ventana 4 -->
+            <div class="card">
+                <div class="card-emoji">💎</div>
+                <div class="card-content">
+                    <h3>Inversión Inteligente</h3>
+                    <p>Trabajos a medida con PAGO ÚNICO.</p>
+                    <div class="price-text">Desde $2.500</div>
+                    <p>(El valor final depende de la complejidad de cada proyecto). ¡Tú eres dueño del sistema, sin ataduras!</p>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">¿Cómo funciona el trato?</h2>
+        <!-- Sección Demos -->
+        <h2 class="section-title">Mira cómo funciona</h2>
+        <div class="demos-container">
+            <a href="https://asesordigital10.github.io/PIZZERIA-LA-MUZZA/" target="_blank" class="demo-btn">
+                <span class="demo-emoji">🍕</span> Demo Pizzería "LA MUZZA"
+            </a>
+            <a href="https://asesordigital10.github.io/DEMO-TALLER-AUTOS/" target="_blank" class="demo-btn">
+                <span class="demo-emoji">🔧</span> Demo Taller "Workshop Pro"
+            </a>
+            <a href="https://asesordigital10.github.io/DEMO-CLINICA-DENTAL/" target="_blank" class="demo-btn">
+                <span class="demo-emoji">🦷</span> Demo Clínica "Smile Studio"
+            </a>
+        </div>
+
+        <!-- Preguntas Frecuentes -->
+        <h2 class="section-title">Preguntas Frecuentes</h2>
 
         <div class="faq-item">
-            <h4>Cero Comisiones. Un Solo Pago.</h4>
-            <p>Almacenamos tu sistema gracias a una sólida arquitectura de Google gratuita. Nunca vas a tener que pensar en membresías.</p>
+            <h4>¿Es realmente un solo pago?</h4>
+            <p>Sí. No cobramos mantenimiento mensual. Usamos tecnologías de Google que permiten que tu web funcione gratis de por vida.</p>
         </div>
 
         <div class="faq-item">
-            <h4>Gestión Automática Inmediata</h4>
-            <p>Sin demoras. Tan pronto el cliente toque el botón, recibes un texto formateado impecable a tu WhatsApp con absolutamente toda la data del consumidor para despachar rápido.</p>
+            <h4>¿Cómo recibo los pedidos?</h4>
+            <p>Llegan directo a tu WhatsApp con todos los datos del cliente y el detalle de la compra. Almacenamos tu sistema gracias a una sólida arquitectura de Google gratuita. Nunca vas a tener que pensar en membresías.</p>
         </div>
 
         <div class="faq-item">
-            <h4>Toma el control con tu Celular</h4>
-            <p>Nos enorgullece entregarte libertad absoluta; accede a un entorno 100% simplificado y gestiona todo (incluso subida y baja de inventario y valores) fácil e instantáneo.</p>
+            <h4>¿Qué pasa si quiero cambiar un precio?</h4>
+            <p>Te entregamos un sistema simple para que tú mismo gestiones tus productos desde el celular, sin depender de nosotros (incluso subida y baja de inventario y valores, fácil e instantáneo).</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>¿Sirve para cualquier celular?</h4>
+            <p>Nuestras Apps están optimizadas para funcionar rápido incluso en teléfonos básicos, asegurando que nadie se quede sin comprar.</p>
         </div>
 
         <div class="footer">
@@ -324,7 +428,7 @@
 
     </div>
 
-    <!-- Botón flotante actualizado con el teléfono: 00595738828 -->
+    <!-- Botón flotante de WhatsApp -->
     <div class="fixed-bottom">
         <a href="https://wa.me/00595738828?text=Hola!%20Adore%20la%20Landing%20y%20quiero%20crear%20mi%20sitio%20Venta%20Silenciosa" class="btn-wsap">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
