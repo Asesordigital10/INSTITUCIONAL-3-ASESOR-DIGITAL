@@ -3,124 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesor Digital UY | Venta Silenciosa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Asesor Digital UY | Venta Silenciosa 2.0</title>
+    
+    <!-- Fuentes modernas de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-dark: #121212;
-            --card-bg: #1e1e1e;
+            --bg-dark: #0a0e17;
+            --card-bg: #141a29;
+            --border-glass: rgba(0, 168, 255, 0.1);
             --tech-blue: #00a8ff;
-            --text-main: #ffffff;
-            --text-dim: #b3b3b3;
             --accent: #00d2ff;
             --wsap-green: #25d366;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 40px; }
-        .container { width: 90%; max-width: 500px; margin: 0 auto; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-        /* Header */
-        header { text-align: center; padding: 40px 0; }
-        .logo-img { width: 120px; height: auto; margin-bottom: 15px; border-radius: 20px; }
-        h1 { font-size: 1.8rem; }
-        .subtitle { color: var(--tech-blue); font-weight: bold; font-size: 0.9rem; letter-spacing: 2px; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            padding-bottom: 100px;
+            /* Degradado sutil en el fondo simulando luz tecnológica */
+            background-image: radial-gradient(circle at 50% 0%, #15233e 0%, var(--bg-dark) 50%);
+            min-height: 100vh;
+        }
 
-        /* Sections */
-        .hero, .card, .faq-item {
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', 'Inter', sans-serif;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+
+        /* AJUSTE TAMAÑO DEL LOGO AUMENTADO A 180px */
+        header img {
+            width: 180px; 
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+            border-radius: 35px;
+            box-shadow: 0 15px 35px rgba(0, 168, 255, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
+        .title-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--tech-blue), var(--accent));
+            color: #000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 5px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 35px 25px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animación estilo escáner arriba de la tarjeta hero */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--tech-blue), transparent);
+            animation: scanline 2s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .hero h2 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        .highlight {
+            color: var(--tech-blue);
+            font-weight: 700;
+        }
+
+        /* --- Tarjetas de Servicio --- */
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .card {
             background: var(--card-bg);
             padding: 25px;
-            border-radius: 24px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
         }
 
-        .hero { text-align: center; border: 1px solid var(--tech-blue); }
-        h2 { color: var(--accent); font-size: 1.3rem; margin-bottom: 10px; }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--tech-blue);
+            box-shadow: 0 10px 30px rgba(0, 168, 255, 0.1);
+        }
 
-        .card { border-left: 5px solid var(--tech-blue); }
-        .card h3 { margin-bottom: 8px; }
+        .card-emoji {
+            font-size: 2.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 18px;
+        }
 
-        /* FAQs */
-        .section-title { text-align: center; margin: 30px 0 20px; color: var(--tech-blue); text-transform: uppercase; font-size: 1rem; }
-        .faq-item h4 { color: var(--accent); margin-bottom: 8px; font-size: 1rem; }
-        .faq-item p { font-size: 0.9rem; color: var(--text-dim); }
+        .card-content h3 {
+            margin-bottom: 6px;
+            font-size: 1.2rem;
+        }
 
-        /* Botón WhatsApp */
-        .btn-wsap {
+        .card-content p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+        }
+
+        /* --- Sección FAQ / Features --- */
+        .section-title {
+            text-align: center;
+            margin: 20px 0 25px;
+            font-size: 1.1rem;
+            color: var(--tech-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--tech-blue);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item h4::before {
+            content: '👉';
+            font-size: 0.9rem;
+        }
+
+        .faq-item p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* --- Footer y Botón Flotante de WhatsApp --- */
+        .fixed-bottom {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
             justify-content: center;
+            z-index: 999;
+        }
+
+        .btn-wsap {
             background: var(--wsap-green);
             color: white;
             text-decoration: none;
-            padding: 20px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            padding: 18px 40px;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            position: sticky;
-            bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        .footer { text-align: center; font-size: 0.75rem; color: var(--text-dim); margin-top: 40px; }
+        .btn-wsap:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Efecto latido para el botón */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0 10px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .footer b {
+            color: var(--tech-blue);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
         <header>
-            <img src="logo.png" alt="AD Logo" class="logo-img">
-            <h1>Asesor Digital UY</h1>
-            <p class="subtitle">VENTA SILENCIOSA</p>
+            <!-- Archivo de logo actualizado a logoad.png y con un mayor tamaño configurado arriba en el CSS -->
+            <img src="logoad.png" alt="Logo AD" onerror="this.style.display='none'">
+            <br>
+            <div class="title-badge">Asesor Digital UY</div>
+            <h1>Venta Silenciosa</h1>
         </header>
 
         <section class="hero">
-            <h2>Tu negocio en internet hoy</h2>
-            <p>Soluciones digitales de <b>pago único</b>. Sin cuotas mensuales ni comisiones por venta.</p>
+            <h2>Multiplica tus Ventas en Automático</h2>
+            <p>Páginas webs interactivas de <span class="highlight">Pago Único</span>. Recibe pedidos las 24 horas en tu WhatsApp, sin aplicaciones de terceros ni suscripciones abusivas.</p>
         </section>
 
-        <div class="card">
-            <h3>🍕 Gastronomía</h3>
-            <p>Menú digital para que tus clientes pidan por WhatsApp sin esperas.</p>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-emoji">🍕</div>
+                <div class="card-content">
+                    <h3>Gastronomía Ágil</h3>
+                    <p>Carta interactiva que te permite tomar cientos de pedidos rápidos mediante un sistema limpio y moderno que le encantará a tus clientes.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-emoji">🛠️</div>
+                <div class="card-content">
+                    <h3>Servicios Digitales</h3>
+                    <p>Eleva tu presencia exhibiendo tu talento, catálogo de herramientas y oficios como nunca antes de manera extremadamente profesional.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>🛠️ Servicios y Oficios</h3>
-            <p>Catálogo profesional para mostrar tus trabajos de herrería, taller o reformas.</p>
-        </div>
-
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 class="section-title">¿Cómo funciona el trato?</h2>
 
         <div class="faq-item">
-            <h4>¿Es realmente un solo pago?</h4>
-            <p>Sí. No cobramos mantenimiento mensual. Usamos tecnologías de Google que permiten que tu web funcione gratis de por vida.</p>
-        </div>
-
-        <div class="faq-item">
-            <h4>¿Cómo recibo los pedidos?</h4>
-            <p>Llegan directo a tu WhatsApp con todos los datos del cliente y el detalle de la compra. Sin intermediarios.</p>
-        </div>
-
-        <div class="faq-item">
-            <h4>¿Qué pasa si quiero cambiar un precio?</h4>
-            <p>Te entregamos un sistema simple para que tú mismo gestiones tus productos desde el celular, sin depender de nosotros.</p>
+            <h4>Cero Comisiones. Un Solo Pago.</h4>
+            <p>Almacenamos tu sistema gracias a una sólida arquitectura de Google gratuita. Nunca vas a tener que pensar en membresías.</p>
         </div>
 
         <div class="faq-item">
-            <h4>¿Sirve para cualquier celular?</h4>
-            <p>Nuestras Apps están optimizadas para funcionar rápido incluso en teléfonos básicos, asegurando que nadie se quede sin comprar.</p>
+            <h4>Gestión Automática Inmediata</h4>
+            <p>Sin demoras. Tan pronto el cliente toque el botón, recibes un texto formateado impecable a tu WhatsApp con absolutamente toda la data del consumidor para despachar rápido.</p>
         </div>
 
-        <a href="https://wa.me/59895738828?text=Hola!%20Vi%20tu%20web%20y%20quiero%20información%20para%20mi%20negocio" class="btn-wsap">
-            👉 Consultar por WhatsApp
-        </a>
+        <div class="faq-item">
+            <h4>Toma el control con tu Celular</h4>
+            <p>Nos enorgullece entregarte libertad absoluta; accede a un entorno 100% simplificado y gestiona todo (incluso subida y baja de inventario y valores) fácil e instantáneo.</p>
+        </div>
 
         <div class="footer">
-            © 2026 Asesor Digital UY - Montevideo, Uruguay<br>
-            Impulsado por Firebase & GitHub Pages
+            © 2024 <b>Asesor Digital UY</b> - Firebase Tech Structure
         </div>
+
+    </div>
+
+    <!-- Botón flotante actualizado con el teléfono: 00595738828 -->
+    <div class="fixed-bottom">
+        <a href="https://wa.me/00595738828?text=Hola!%20Adore%20la%20Landing%20y%20quiero%20crear%20mi%20sitio%20Venta%20Silenciosa" class="btn-wsap">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Crear mi App WhatsApp
+        </a>
     </div>
 
 </body>
