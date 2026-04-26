@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesor Digital UY | Venta Silenciosa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --tech-blue: #00a8ff;
+            --text-main: #ffffff;
+            --text-dim: #b3b3b3;
+            --accent: #00d2ff;
+            --wsap-green: #25d366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 40px; }
+        .container { width: 90%; max-width: 500px; margin: 0 auto; }
+
+        /* Header */
+        header { text-align: center; padding: 40px 0; }
+        .logo-img { width: 120px; height: auto; margin-bottom: 15px; border-radius: 20px; }
+        h1 { font-size: 1.8rem; }
+        .subtitle { color: var(--tech-blue); font-weight: bold; font-size: 0.9rem; letter-spacing: 2px; }
+
+        /* Sections */
+        .hero, .card, .faq-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 24px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .hero { text-align: center; border: 1px solid var(--tech-blue); }
+        h2 { color: var(--accent); font-size: 1.3rem; margin-bottom: 10px; }
+
+        .card { border-left: 5px solid var(--tech-blue); }
+        .card h3 { margin-bottom: 8px; }
+
+        /* FAQs */
+        .section-title { text-align: center; margin: 30px 0 20px; color: var(--tech-blue); text-transform: uppercase; font-size: 1rem; }
+        .faq-item h4 { color: var(--accent); margin-bottom: 8px; font-size: 1rem; }
+        .faq-item p { font-size: 0.9rem; color: var(--text-dim); }
+
+        /* Botón WhatsApp */
+        .btn-wsap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--wsap-green);
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: sticky;
+            bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .footer { text-align: center; font-size: 0.75rem; color: var(--text-dim); margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="AD Logo" class="logo-img">
+            <h1>Asesor Digital UY</h1>
+            <p class="subtitle">VENTA SILENCIOSA</p>
+        </header>
+
+        <section class="hero">
+            <h2>Tu negocio en internet hoy</h2>
+            <p>Soluciones digitales de <b>pago único</b>. Sin cuotas mensuales ni comisiones por venta.</p>
+        </section>
+
+        <div class="card">
+            <h3>🍕 Gastronomía</h3>
+            <p>Menú digital para que tus clientes pidan por WhatsApp sin esperas.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛠️ Servicios y Oficios</h3>
+            <p>Catálogo profesional para mostrar tus trabajos de herrería, taller o reformas.</p>
+        </div>
+
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+
+        <div class="faq-item">
+            <h4>¿Es realmente un solo pago?</h4>
+            <p>Sí. No cobramos mantenimiento mensual. Usamos tecnologías de Google que permiten que tu web funcione gratis de por vida.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>¿Cómo recibo los pedidos?</h4>
+            <p>Llegan directo a tu WhatsApp con todos los datos del cliente y el detalle de la compra. Sin intermediarios.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>¿Qué pasa si quiero cambiar un precio?</h4>
+            <p>Te entregamos un sistema simple para que tú mismo gestiones tus productos desde el celular, sin depender de nosotros.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>¿Sirve para cualquier celular?</h4>
+            <p>Nuestras Apps están optimizadas para funcionar rápido incluso en teléfonos básicos, asegurando que nadie se quede sin comprar.</p>
+        </div>
+
+        <a href="https://wa.me/59895738828?text=Hola!%20Vi%20tu%20web%20y%20quiero%20información%20para%20mi%20negocio" class="btn-wsap">
+            👉 Consultar por WhatsApp
+        </a>
+
+        <div class="footer">
+            © 2026 Asesor Digital UY - Montevideo, Uruguay<br>
+            Impulsado por Firebase & GitHub Pages
+        </div>
+    </div>
+
+</body>
+</html>
